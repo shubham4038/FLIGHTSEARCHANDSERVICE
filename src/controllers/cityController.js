@@ -1,10 +1,10 @@
-const CityService = require('../services/index');
+const {CityService} = require('../services/index');
 
-const CityService = new CityService();
+const cityService = new CityService();
 
 exports.Create = async (req,res,next)=>{
     try {
-        const city = await CityService.createCity(req.body)
+        const city = await cityService.createCity(req.body)
         res.status(200).json({
             status:"Success",
             message: "Succesfully created",
@@ -20,7 +20,7 @@ exports.Create = async (req,res,next)=>{
 }
 exports.destroy = async (req,res,next)=>{
     try {
-        const city = await CityService.deleteCity(req.params.id)
+        const city = await cityService.deleteCity(req.params.id)
         res.status(200).json({
             status:"Success",
             message: "Succesfully Deleted",
@@ -35,7 +35,7 @@ exports.destroy = async (req,res,next)=>{
 }
 exports.updateCity = async (req,res,next)=>{
     try {
-        const city = await CityService.updateCity(req.params.id,req.body)
+        const city = await cityService.updateCity(req.params.id,req.body)
         res.status(200).json({
             status:"Success",
             message: "Succesfully created",
@@ -51,7 +51,7 @@ exports.updateCity = async (req,res,next)=>{
 }
 exports.getCity = async (req,res,next)=>{
     try {
-        const city = await CityService.getCity(req.params.id)
+        const city = await cityService.getCity(req.params.id)
         res.status(200).json({
             status:"Success",
             message: "Succesfully created",
