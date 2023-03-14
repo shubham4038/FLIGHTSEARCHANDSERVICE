@@ -65,3 +65,20 @@ exports.getCity = async (req,res,next)=>{
     }
     
 }
+
+exports.getAllCities = async (req,res,next) =>{
+    try {
+        console.log(req.query);
+        const city = await cityService.getAllcities(req.query);
+        res.status(200).json({
+            status:"Success",
+            message: "Succesfully created",
+            data:city
+        })
+    } catch (error) { 
+            res.status(401).json({
+                status:"Failed",
+                message:"Something went wrong"
+            })
+        }
+}
