@@ -13,14 +13,14 @@ const serverSetupStart = async ()=>{
     if(process.env.SYNC_DB){
         db.sequelize.sync({alter:true})
     };
-    const city = await City.findOne({
-        where :{
-            id: 6
-        }
-    })
-    console.log(city);
-    const airport = await city.getAirports();
-    console.log(airport);
+    // const city = await City.findOne({
+    //     where :{
+    //         id: 6
+    //     }
+    // })
+    // console.log(city);
+    // const airport = await city.getAirports();
+    // console.log(airport);
 })
 }
 

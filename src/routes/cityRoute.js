@@ -9,4 +9,6 @@ router.route('/city/:id').patch(cityController.updateCity);
 router.route('/city/:id').get(cityController.getCity);
 router.route('/city').get(cityController.getAllCities);
 
+
+
 module.exports = router;
