@@ -1,4 +1,4 @@
-const { AirplaneService} = require('../services/airplaneservice');
+const { AirplaneService} = require('../services/index');
 
 const airplaneService = new AirplaneService();
 
@@ -21,7 +21,7 @@ exports.create = async(req,res,next)=>{
 }
 exports.destroy = async (req,res,next)=>{
     try {
-        const city = await airplaneService.deleteAirplane(req.params.id)
+        const airplane = await airplaneService.deleteAirplane(req.params.id)
         res.status(200).json({
             status:"Success",
             message: "Succesfully Deleted",
@@ -52,11 +52,12 @@ exports.updateAirplane = async (req,res,next)=>{
 }
 exports.getAirplane = async (req,res,next)=>{
     try {
-        const city = await airplaneService.getAirplane(req.params.id)
+        const airplane = await airplaneService.getAirplane(req.params.id)
+        console.log(airplane);
         res.status(200).json({
             status:"Success",
             message: "Succesfully created",
-            data:city
+            data:airplane
         })
     } catch (error) {
         res.status(401).json({

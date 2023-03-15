@@ -1,13 +1,13 @@
-const AirplaneRepository = require('../repository/airplaneRepository');
+const {AirplaneRepository} = require('../repository/index');
 
 class AirplaneService{
     constructor(){
-        this.airplanerepository= new AirplaneRepository();
+        this.AirplaneRepository= new AirplaneRepository();
     }
 
     async createAirplane(data){
         try {
-            const airplane = await this.airplanerepository.createAirplane(data);
+            const airplane = await this.AirplaneRepository.createAirplane(data);
             return airplane
         } catch (error) {
             console.log("Error happened at service layer")
@@ -16,7 +16,7 @@ class AirplaneService{
 
     async deleteAirplane(airplane_id){
         try {
-            const airplane = await this.airplanerepository.deleteAirplane(airplane_id)
+            const airplane = await this.AirplaneRepository.deleteAirplane(airplane_id)
             return airplane
         } catch (error) {
             console.log("Error happened at service layer")
@@ -25,7 +25,7 @@ class AirplaneService{
 
     async updateAirplane(airplane_id,data){
         try {
-            const airplane = await this.airplanerepository.updateAirplane(airplane_id,data)
+            const airplane = await this.AirplaneRepository.updateAirplane(airplane_id,data)
             return airplane;
         } catch (error) {
             console.log("Error happened at servoice layer");
@@ -34,10 +34,10 @@ class AirplaneService{
 
     async getAirplane(airplane_id){
         try {
-            const airplane = await this.airplanerepository.getairplane(airplane_id);
+            const airplane = await this.AirplaneRepository.getAirplane(airplane_id);
             return airplane
         } catch (error) {
-            
+            console.log("Error happened at servoice layer");
         }
     }
 }

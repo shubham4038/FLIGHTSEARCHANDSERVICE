@@ -1,4 +1,4 @@
-const { Airplane } = require('../models/airplane');
+const { Airplane } = require('../models/index');
 
 class AirplaneRepository {
     async createAirplane({model_number,capacity}){
@@ -35,10 +35,13 @@ class AirplaneRepository {
         }
     }
 
-    async getairplane(airplanne_id){
+    async getAirplane(airplane_id){
         try {
-            const airplane = await Airplane.findByPk(airplanne_id);
-            return airplane
+            console.log("Hi")
+            const airplane = await Airplane.findByPk(airplane_id);
+            console.log(airplane)
+            return airplane;
+            
         } catch (error) {
             throw(error);
         }

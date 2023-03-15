@@ -1,4 +1,5 @@
 module.exports = {
     CityService:require('./cityService'),
-    AirplaneService:require('./airplaneservice')
+    AirplaneService:require('./airplaneservice'),
+    FlightService:require('./flightService')
 };
