@@ -39,7 +39,6 @@ class AirplaneRepository {
         try {
             console.log("Hi")
             const airplane = await Airplane.findByPk(airplane_id);
-            console.log(airplane)
             return airplane;
             
         } catch (error) {
